@@ -1,0 +1,70 @@
+.quote-card-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 180px;
+  background: linear-gradient(135deg, rgba(30, 41, 59, 0.4), rgba(17, 24, 39, 0.6));
+  border-color: rgba(139, 92, 246, 0.2);
+}
+
+.quote-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.quote-heart-icon {
+  color: var(--accent);
+  filter: drop-shadow(0 0 4px rgba(244, 63, 94, 0.4));
+}
+
+.quote-label {
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  letter-spacing: 0.05em;
+}
+
+.quote-text {
+  font-size: 1.2rem;
+  font-weight: 600;
+  line-height: 1.5;
+  color: var(--text-main);
+  margin-bottom: 1rem;
+  font-style: italic;
+}
+
+.quote-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: auto;
+}
+
+.quote-author {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.quote-refresh-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--border-color);
+  color: var(--text-muted);
+  transition: var(--transition);
+}
+
+.quote-refresh-btn:hover {
+  color: var(--primary);
+  background: rgba(255, 255, 255, 0.08);
+  border-color: var(--primary);
+  transform: rotate(180deg);
+}

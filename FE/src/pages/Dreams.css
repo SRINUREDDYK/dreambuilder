@@ -1,0 +1,132 @@
+.dreams-page-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.dreams-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.dreams-error-alert {
+  padding: 0.75rem 1rem;
+  background: rgba(244, 63, 94, 0.1);
+  border: 1px solid rgba(244, 63, 94, 0.3);
+  border-radius: var(--radius-sm);
+  color: var(--accent);
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+/* Add Dream Form */
+.add-dream-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  border-color: rgba(99, 102, 241, 0.25);
+  animation: slideDown 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.add-dream-panel h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.add-dream-form {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.25rem;
+}
+
+.grid-span-full {
+  grid-column: span 4;
+}
+
+.select-field {
+  appearance: none;
+  background-image: url("data:image/svg+xml;utf8,<svg fill='white' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>");
+  background-repeat: no-repeat;
+  background-position: right 0.75rem center;
+  background-size: 1.25rem;
+  padding-right: 2rem;
+}
+
+body.light-theme .select-field {
+  background-image: url("data:image/svg+xml;utf8,<svg fill='black' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>");
+}
+
+.submit-dream-btn {
+  grid-column: span 4;
+  padding: 0.85rem;
+  font-weight: 700;
+  margin-top: 0.5rem;
+}
+
+.submit-dream-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Dreams Grid */
+.dreams-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 1.5rem;
+}
+
+.empty-dreams-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 5rem 2rem;
+  gap: 1.25rem;
+  max-width: 600px;
+  margin: 2rem auto;
+}
+
+.empty-emoji {
+  font-size: 3.5rem;
+  filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.1));
+}
+
+.empty-dreams-state h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.empty-dreams-state p {
+  color: var(--text-muted);
+  font-size: 1rem;
+  line-height: 1.5;
+  max-width: 440px;
+  margin-bottom: 0.5rem;
+}
+
+@media (max-width: 992px) {
+  .add-dream-form {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .grid-span-full, .submit-dream-btn {
+    grid-column: span 2;
+  }
+}
+
+@media (max-width: 576px) {
+  .add-dream-form {
+    grid-template-columns: 1fr;
+  }
+  .grid-span-full, .submit-dream-btn {
+    grid-column: span 1;
+  }
+}

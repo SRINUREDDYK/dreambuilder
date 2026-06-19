@@ -1,0 +1,126 @@
+.habit-card-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.25rem;
+  margin-bottom: 1rem;
+  transition: var(--transition);
+}
+
+.habit-card-container:hover {
+  transform: translateY(-2px);
+}
+
+.completed-habit {
+  border-color: rgba(16, 185, 129, 0.25);
+  background: rgba(16, 185, 129, 0.04);
+}
+
+.habit-card-left {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex: 1;
+}
+
+.habit-check-btn {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: 2px solid var(--border-color);
+  background: rgba(255, 255, 255, 0.02);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-muted);
+  transition: var(--transition);
+}
+
+.habit-check-btn:hover {
+  border-color: var(--primary);
+  color: var(--primary);
+  background: var(--primary-glow);
+}
+
+.habit-check-btn.checked {
+  border-color: var(--success);
+  background: var(--success);
+  color: white;
+  box-shadow: 0 0 10px rgba(16, 185, 129, 0.4);
+}
+
+.placeholder-check {
+  opacity: 0.3;
+}
+
+.habit-check-btn:hover .placeholder-check {
+  opacity: 1;
+}
+
+.habit-details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.habit-title {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--text-main);
+}
+
+.completed-habit .habit-title {
+  color: var(--text-muted);
+  text-decoration: line-through;
+}
+
+.habit-freq {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--text-dark);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.habit-card-right {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.habit-streak-badge {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.35rem 0.75rem;
+  background: rgba(245, 158, 11, 0.1);
+  border: 1px solid rgba(245, 158, 11, 0.25);
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--warning);
+  box-shadow: var(--shadow-sm);
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.03); }
+  100% { transform: scale(1); }
+}
+
+.streak-flame {
+  font-size: 1rem;
+}
+
+.habit-delete-btn {
+  color: var(--text-dark);
+  padding: 0.5rem;
+  border-radius: 4px;
+  transition: var(--transition);
+}
+
+.habit-delete-btn:hover {
+  color: var(--accent);
+  background: rgba(244, 63, 94, 0.08);
+}

@@ -1,0 +1,91 @@
+.milestone-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  transition: var(--transition);
+  margin-bottom: 0.75rem;
+}
+
+.milestone-item:hover {
+  background: rgba(255, 255, 255, 0.04);
+  transform: translateX(4px);
+}
+
+.milestone-item.completed {
+  border-color: rgba(16, 185, 129, 0.2);
+  background: rgba(16, 185, 129, 0.02);
+}
+
+.milestone-checkbox {
+  width: 24px;
+  height: 24px;
+  border-radius: 6px;
+  border: 2px solid var(--text-dark);
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition);
+  flex-shrink: 0;
+}
+
+.milestone-checkbox:hover {
+  border-color: var(--primary);
+  background: rgba(99, 102, 241, 0.1);
+}
+
+.milestone-checkbox.checked {
+  border-color: var(--success);
+  background: var(--success);
+}
+
+.checkmark-icon {
+  color: white;
+}
+
+.milestone-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.milestone-phase {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--primary);
+  letter-spacing: 0.05em;
+}
+
+.milestone-item.completed .milestone-phase {
+  color: var(--success);
+}
+
+.milestone-title {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--text-main);
+  transition: var(--transition);
+}
+
+.milestone-item.completed .milestone-title {
+  text-decoration: line-through;
+  color: var(--text-dark);
+}
+
+.milestone-delete-btn {
+  color: var(--text-dark);
+  padding: 0.5rem;
+  border-radius: 4px;
+  transition: var(--transition);
+}
+
+.milestone-delete-btn:hover {
+  color: var(--accent);
+  background: rgba(244, 63, 94, 0.08);
+}
